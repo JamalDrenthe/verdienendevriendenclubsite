@@ -1,0 +1,235 @@
+
+
+## ✅ Verdienende Vrienden Club (VVC) Website
+
+### 🎯 Doel van het project
+
+Bouw een **visueel indrukwekkende en informatieve website** voor **VVC – Verdienende Vrienden Club**, een communityplatform voor jongeren (16–35 jaar) waar ze samen geld kunnen verdienen via missies, referrals en persoonlijke groei.
+
+🔹 Het accountgedeelte van VVC bestaat al.
+🔹 Deze website is puur informatief en gericht op **design + conversie**.
+
+---
+
+### 🎨 Designrichtlijnen
+
+* **Futuristische / cyberstijl**: denk aan neonlijnen, glow-effects, scanlines, 3D-interactie.
+* Gebruik kleuren als `#00ffaa`, `#5c67ff`, `#ad51ff`, `#1a1a1a`, `#262626`.
+* Voeg interactieve 3D hover-kaarten toe (zie voorbeeldcode).
+* Gebruik `Flexbox` of `CSS Grid` voor responsiviteit.
+* Zorg voor een **responsive layout** (mobiel én desktop).
+* Typografie: ‘Segoe UI’, sans-serif of een gelijkaardig modern font.
+
+---
+
+### 📄 Website-indeling (structuur)
+
+1. **Hero-sectie**
+
+   * Interactieve cyber card (3D hover)
+   * Titel, subtitel, call-to-action-knop
+2. **Over VVC**
+
+   * Wat is het? Wat doe je? Voor wie is het bedoeld?
+3. **Hoe het werkt**
+
+   * In 3 stappen met iconen of tekstblokken
+4. **Voordelen**
+
+   * Waarom je zou meedoen
+5. **Call to action (CTA)**
+
+   * Nodigt uit om lid te worden
+6. **Footer**
+
+   * Contact / socials / disclaimer
+
+---
+
+### 📁 Bestandsstructuur
+
+```
+/
+|- index.html
+|- style.css
+|- script.js (optioneel)
+|- assets/ (voor beelden of SVG's)
+```
+
+---
+
+### 🧩 Voorbeeldcode
+
+#### 📄 index.html
+
+```html
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VVC – Verdienende Vrienden Club</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container noselect">
+        <div class="canvas">
+          <div class="tracker tr-1"></div>
+          <div class="tracker tr-2"></div>
+          <div class="tracker tr-3"></div>
+          <div class="tracker tr-4"></div>
+          <div class="tracker tr-5"></div>
+          <div class="tracker tr-6"></div>
+          <div class="tracker tr-7"></div>
+          <div class="tracker tr-8"></div>
+          <div class="tracker tr-9"></div>
+          <div id="card">
+            <div class="card-content">
+              <div class="card-glare"></div>
+              <div class="cyber-lines">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <p id="prompt">HOVER ME</p>
+              <div class="title">Verdienende<br />Vrienden</div>
+              <div class="glowing-elements">
+                <div class="glow-1"></div>
+                <div class="glow-2"></div>
+                <div class="glow-3"></div>
+              </div>
+              <div class="subtitle">
+                <span>Samen</span>
+                <span class="highlight">Verdienen</span>
+              </div>
+              <div class="card-particles">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="corner-elements">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="scan-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1 class="main-title">Verdienende Vrienden Club</h1>
+      <p class="tagline">Bouw samen een financieel sterke toekomst</p>
+      <a href="#info" class="cta-button">Doe Mee</a>
+    </header>
+
+    <main>
+      <section id="info">
+        <h2>Wat is VVC?</h2>
+        <p>
+          VVC is een platform voor jongeren die via missies, acties en referrals geld kunnen verdienen en zichzelf ontwikkelen binnen een motiverende community.
+        </p>
+      </section>
+
+      <section id="how-it-works">
+        <h2>Hoe werkt het?</h2>
+        <div class="steps">
+          <div class="step">📲 Account aanmaken</div>
+          <div class="step">🎯 Missies uitvoeren</div>
+          <div class="step">💸 Verdien geld & groei</div>
+        </div>
+      </section>
+
+      <section id="benefits">
+        <h2>Waarom meedoen?</h2>
+        <ul>
+          <li>✅ Geen verplichtingen</li>
+          <li>✅ Verdienmodel via referral</li>
+          <li>✅ Ontwikkel je talenten</li>
+          <li>✅ Maak vrienden en bouw een netwerk</li>
+        </ul>
+      </section>
+
+      <section id="cta">
+        <h2>Klaar om te starten?</h2>
+        <a href="#info" class="cta-button">Sluit je aan bij VVC</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Verdienende Vrienden Club – Alle rechten voorbehouden.</p>
+    </footer>
+  </body>
+</html>
+```
+
+---
+
+#### 🎨 style.css
+
+Gebruik hier de **volledige interactieve CSS** die je eerder aanleverde met:
+
+* `.container`, `.canvas`, `.tracker`, `.card-content`, `.glowing-elements`, `.scan-line`, `.cyber-lines`, etc.
+* Gebruik ook de aanvulling hieronder voor algemene stijl:
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #00ffaa;
+}
+
+.main-title {
+  margin-top: 30px;
+  font-size: 2.5rem;
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.cta-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #00ffaa, #5c67ff);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(92, 103, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.6);
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+```
+
+---
+
+### 🛠️ Aanvullende instructies
+
+* Zorg ervoor dat de 3D-kaart visueel functioneel is en goed werkt op hover.
+* Verwerk alle `.tracker` hovertransformaties uit de originele CSS.
+* Zorg dat de site er goed uitziet op mobiel en op desktop.
+* Houd HTML en CSS gescheiden en overzichtelijk.
+* Gebruik geen frameworks zoals React of Vue. Alleen pure HTML/CSS/JS.
