@@ -1,61 +1,109 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark to-cyber-gray"></div>
-      
-      {/* Decorative grid lines */}
-      <div className="absolute inset-0 opacity-10" style={{backgroundImage: "linear-gradient(0deg, transparent 24%, rgba(0, 255, 170, 0.5) 25%, rgba(0, 255, 170, 0.5) 26%, transparent 27%, transparent 74%, rgba(0, 255, 170, 0.5) 75%, rgba(0, 255, 170, 0.5) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 255, 170, 0.5) 25%, rgba(0, 255, 170, 0.5) 26%, transparent 27%, transparent 74%, rgba(0, 255, 170, 0.5) 75%, rgba(0, 255, 170, 0.5) 76%, transparent 77%, transparent)", backgroundSize: "50px 50px"}}></div>
-      
-      <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="inline-block text-3xl md:text-4xl font-bold relative">
-            Wat is <span className="text-cyber-green">VVC</span>?
-            <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyber-green to-cyber-blue"></div>
+    <section id="about" className="py-20">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            Wat is <span className="text-white/90">VVC</span>?
           </h2>
-        </div>
+          <p className="text-white/70 max-w-2xl mx-auto">
+            Een netwerk dat staat voor kwaliteit. Wij helpen organisaties hun processen, producten en klantcontact naar het hoogste niveau te tillen.
+          </p>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <div className="bg-cyber-gray/50 border border-cyber-green/20 rounded-xl p-6 backdrop-blur-sm relative group transform transition-all duration-500 hover:shadow-neon-green/20">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyber-green/5 to-cyber-blue/5 rounded-xl -z-10"></div>
-              
-              <h3 className="text-cyber-green text-xl font-bold mb-4">Jouw Financiële Vriend</h3>
-              <p className="text-gray-300 mb-4">
-                VVC is een platform voor jongeren (16-35 jaar) die elkaar helpen met het opbouwen van financiële vrijheid. Geen saaie gesprekken of theoretische concepten, maar concrete acties die direct geld opleveren.
-              </p>
-              
-              <h3 className="text-cyber-green text-xl font-bold mb-4">Onze Missie</h3>
-              <p className="text-gray-300">
-                Wij geloven dat jongeren elkaar kunnen motiveren en samen sterker staan. Bij VVC bouw je niet alleen een financiële toekomst, maar ook een netwerk van gelijkgestemde vrienden die samen willen groeien.
-              </p>
-              
-              {/* Decorative corner glows */}
-              <div className="absolute top-0 left-0 w-3 h-3 bg-cyber-green/50 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 bg-cyber-blue/50 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </div>
-          </div>
-          
-          <div className="order-1 md:order-2 relative">
-            {/* A group of diverse young people collaborating on a project with digital overlays */}
-            <div className="rounded-xl overflow-hidden relative group">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Jongeren die samenwerken" className="w-full h-auto rounded-xl" />
-              <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark to-transparent opacity-50"></div>
-              <div className="absolute inset-0 bg-cyber-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              {/* Cyber overlay effect */}
-              <div className="absolute inset-0 overflow-hidden opacity-20">
-                <div className="w-full h-1 bg-cyber-green/50 absolute top-1/4 left-0 transform -skew-y-3"></div>
-                <div className="w-full h-1 bg-cyber-purple/50 absolute top-3/4 left-0 transform skew-y-3"></div>
-                <div className="w-1 h-full bg-cyber-blue/50 absolute top-0 left-1/3 transform -skew-x-3"></div>
-                <div className="w-1 h-full bg-cyber-green/50 absolute top-0 right-1/4 transform skew-x-3"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="order-2 md:order-1"
+          >
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4">
+                    Wat wij doen
+                  </h3>
+                  <p className="text-white/70 leading-relaxed text-lg">
+                    Wij bieden diepgaande kwaliteitscontroles, variërend van digitale audits tot fysieke inspecties. Onze focus ligt op kwaliteitscontrole, systeem- & workflowtesten en mystery shopping.
+                  </p>
+                  <ul className="mt-6 space-y-3 text-white/70 leading-relaxed text-lg">
+                    <li>
+                      <span className="font-semibold text-white">Kwaliteitscontrole:</span> grondige checks van reviews en productspecificaties.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-white">Systeem- & Workflowtesten:</span> analyseren en optimaliseren van interne bedrijfsprocessen.
+                    </li>
+                    <li>
+                      <span className="font-semibold text-white">Mystery Shopping:</span> echte klantervaringen in kaart brengen.
+                    </li>
+                  </ul>
+                </div>
                 
-                {/* Scan line animation */}
-                <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-b from-cyber-green/10 to-transparent animate-scanline"></div>
+                <div className="bg-white/10 rounded-2xl p-6">
+                  <h4 className="text-xl font-semibold mb-3">Onze Methode</h4>
+                  <p className="text-white/70 leading-relaxed">
+                    Wij geloven in een 360-graden aanpak. Daarom voeren wij onze controles uit op drie niveaus: digitaal (online audits en systeemchecks), fysiek (locatiebezoeken en productinspecties) en telefonisch (klantenservice- en sales-audits).
+                  </p>
+                </div>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="flex -space-x-2">
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium">
+                      FI
+                    </div>
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium">
+                      VA
+                    </div>
+                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium">
+                      IT
+                    </div>
+                  </div>
+                  <p className="text-white/70 text-sm">
+                    <span className="font-semibold text-white">Actief in 4 sectoren</span> waar kwaliteit het verschil maakt
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            className="order-1 md:order-2"
+          >
+            <div className="relative">
+              <div className="aspect-square rounded-3xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20">
+                <img 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800" 
+                  alt="Team dat samenwerkt aan kwaliteitscontrole" 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+              
+              <div className="absolute -bottom-4 -left-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
+                <p className="text-2xl font-bold">360°</p>
+                <p className="text-sm text-white/70">aanpak</p>
+              </div>
+              
+              <div className="absolute -top-4 -right-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
+                <p className="text-2xl font-bold">3</p>
+                <p className="text-sm text-white/70">niveaus</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

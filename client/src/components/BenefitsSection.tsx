@@ -1,115 +1,176 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
+import { CheckCircle, MessageCircle, RefreshCw, Rocket, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+type BenefitColor = 'theme-blue' | 'theme-purple' | 'theme-gray';
+
+const BENEFIT_STYLES: Record<
+  BenefitColor,
+  {
+    bg: string;
+    iconBg: string;
+    iconColor: string;
+    titleColor: string;
+  }
+> = {
+  'theme-blue': {
+    bg: 'bg-theme-blue/5',
+    iconBg: 'bg-theme-blue/10',
+    iconColor: 'text-theme-blue',
+    titleColor: 'text-theme-blue',
+  },
+  'theme-purple': {
+    bg: 'bg-theme-purple/5',
+    iconBg: 'bg-theme-purple/10',
+    iconColor: 'text-theme-purple',
+    titleColor: 'text-theme-purple',
+  },
+  'theme-gray': {
+    bg: 'bg-theme-gray/10',
+    iconBg: 'bg-theme-gray/20',
+    iconColor: 'text-theme-gray',
+    titleColor: 'text-theme-text-primary',
+  },
+};
 
 interface BenefitCardProps {
-  icon: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
-  color: string;
+  color: BenefitColor;
 }
 
 const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, color }) => {
+  const styles = BENEFIT_STYLES[color];
+  const Icon = icon;
+
   return (
-    <div className="bg-cyber-gray/50 backdrop-blur-sm border border-cyber-green/20 rounded-xl p-6 relative group hover:bg-cyber-gray/80 transition-all duration-300">
-      <div className={`absolute -top-3 -right-3 w-6 h-6 bg-${color} rounded-br-xl opacity-70`}></div>
-      
-      <div className={`bg-${color}/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:shadow-neon-${color}/30 transition-all duration-300`}>
-        <span className="text-2xl">{icon}</span>
+    <div className="group relative">
+      <div className="relative bg-theme-white border border-theme-gray/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+        {/* Icon container */}
+        <div className={`relative w-16 h-16 ${styles.iconBg} rounded-2xl flex items-center justify-center mb-6`}>
+          <Icon aria-hidden="true" className={`w-8 h-8 ${styles.iconColor}`} />
+        </div>
+        
+        <h3 className={`text-xl font-semibold mb-3 ${styles.titleColor}`}>
+          {title}
+        </h3>
+        
+        <p className="text-theme-text-secondary leading-relaxed">
+          {description}
+        </p>
       </div>
-      
-      <h3 className={`text-xl font-bold mb-3 text-${color}`}>{title}</h3>
-      <p className="text-gray-300">
-        {description}
-      </p>
-      
-      <div className={`absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-${color}/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
     </div>
   );
 };
 
 const BenefitsSection: React.FC = () => {
   return (
-    <section id="benefits" className="py-20 relative bg-cyber-dark">
-      {/* A futuristic digital network background */}
-      <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')", backgroundSize: "cover", backgroundPosition: "center"}}></div>
-      
-      <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="inline-block text-3xl md:text-4xl font-bold relative">
-            Waarom <span className="text-cyber-green">Meedoen</span>?
-            <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyber-purple to-cyber-green"></div>
+    <section id="benefits" className="py-20 relative overflow-hidden">
+      {/* Semi-transparent overlay for readability */}
+      <div className="absolute inset-0 bg-theme-light-bg/60 backdrop-blur-[1px]"></div>
+      <div className="container mx-auto px-6 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-semibold text-theme-text-primary mb-4">
+            Waarom <span className="text-theme-blue">VVC</span>?
           </h2>
-        </div>
+          <p className="text-theme-text-secondary max-w-2xl mx-auto">
+            Ontdek hoe VVC jouw organisatie helpt om kwaliteit te borgen en processen te optimaliseren.
+          </p>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Benefit 1 */}
-          <BenefitCard 
-            icon="✅"
-            title="Geen Verplichtingen"
-            description="Jij bepaalt wanneer en hoeveel tijd je besteedt. Geen targets of deadlines, alleen mogelijkheden."
-            color="cyber-green"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <BenefitCard 
+              icon={CheckCircle}
+              title="Onafhankelijke kwaliteitscontrole"
+              description="Objectieve checks van reviews, productspecificaties en klantcontact, met heldere verbeterpunten."
+              color="theme-blue"
+            />
+          </motion.div>
           
           {/* Benefit 2 */}
-          <BenefitCard 
-            icon="🔄"
-            title="Verdienmodel via Referral"
-            description="Verdien niet alleen van je eigen acties maar ook als je netwerk groeit. Het systeem werkt ook als jij dat niet doet."
-            color="cyber-blue"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+          >
+            <BenefitCard 
+              icon={RefreshCw}
+              title="Proces- & workflowtesten"
+              description="We analyseren interne processen en systemen en adviseren concrete optimalisaties die direct resultaat geven."
+              color="theme-purple"
+            />
+          </motion.div>
           
           {/* Benefit 3 */}
-          <BenefitCard 
-            icon="🚀"
-            title="Ontwikkel Je Talenten"
-            description="Verbeter je vaardigheden terwijl je verdient. Van digitale marketing tot sales, leer de skills die niet op school worden aangeleerd."
-            color="cyber-purple"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          >
+            <BenefitCard 
+              icon={Rocket}
+              title="Mystery shopping & klantbeleving"
+              description="We meten de echte klantervaring: online, op locatie en telefonisch. Zo zie je wat er echt gebeurt."
+              color="theme-gray"
+            />
+          </motion.div>
           
           {/* Benefit 4 */}
-          <div className="bg-cyber-gray/50 backdrop-blur-sm border border-cyber-green/20 rounded-xl p-6 relative group hover:bg-cyber-gray/80 transition-all duration-300">
-            <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-br from-cyber-blue to-cyber-green rounded-br-xl opacity-70"></div>
-            
-            <div className="bg-gradient-to-r from-cyber-blue/10 to-cyber-green/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:shadow-neon-green/30 transition-all duration-300">
-              <span className="text-2xl">👥</span>
-            </div>
-            
-            <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-cyber-blue to-cyber-green bg-clip-text text-transparent">Netwerk & Vrienden</h3>
-            <p className="text-gray-300">
-              Ontmoet gelijkgestemde jongeren die ook willen groeien. Bouw waardevolle contacten voor de toekomst.
-            </p>
-            
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyber-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+          >
+            <BenefitCard 
+              icon={Users}
+              title="Heldere rapportage"
+              description="Praktische inzichten, prioriteiten en acties zodat teams snel kunnen bijsturen en verbeteren."
+              color="theme-blue"
+            />
+          </motion.div>
         </div>
         
-        {/* Testimonial Section */}
-        <div className="mt-20 relative">
-          {/* A group of diverse young people in a casual business setting */}
-          <div className="relative rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=600" alt="VVC Community" className="w-full h-64 md:h-80 object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-cyber-dark via-cyber-dark/80 to-transparent"></div>
-            
-            <div className="absolute inset-0 flex items-center justify-center p-6">
-              <div className="bg-cyber-dark/80 backdrop-blur-md border border-cyber-blue/30 rounded-xl p-6 md:p-8 max-w-3xl">
-                <div className="flex flex-col items-center text-center">
-                  <div className="text-5xl mb-4">💬</div>
-                  <p className="text-xl md:text-2xl italic mb-6 text-gray-200">
-                    "Via VVC heb ik niet alleen een extra inkomen kunnen genereren, maar ook vrienden gemaakt die me blijven motiveren. Het is meer dan een platform, het is een community."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="mr-4 w-12 h-12 rounded-full bg-cyber-blue/30 flex items-center justify-center text-xl">
-                      NV
-                    </div>
-                    <div className="text-left">
-                      <p className="font-bold">Nick Vermeeren</p>
-                      <p className="text-sm text-gray-400">VVC-lid sinds 2023</p>
-                    </div>
-                  </div>
-                </div>
+        {/* Testimonial section */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="mt-20"
+        >
+          <div className="bg-theme-white rounded-2xl p-8 shadow-sm border border-theme-gray/20">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-theme-blue rounded-full flex items-center justify-center text-theme-white font-semibold flex-shrink-0">
+                JD
+              </div>
+              <div>
+                <p className="text-theme-text-secondary mb-4 italic">
+                  "Dankzij VVC kregen we eindelijk helder inzicht in waar het misging. De verbeterpunten waren concreet en direct toepasbaar - onze klantbeleving is zichtbaar gestegen."
+                </p>
+                <p className="font-semibold text-theme-text-primary">- Jan de Vries</p>
+                <p className="text-sm text-theme-text-muted">Samenwerking sinds 2023</p>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

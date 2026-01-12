@@ -5,6 +5,11 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      boxShadow: {
+        "neon-green": "0 0 5px hsl(var(--cyber-green)), 0 0 10px hsl(var(--cyber-green))",
+        "neon-blue": "0 0 5px hsl(var(--cyber-blue)), 0 0 10px hsl(var(--cyber-blue))",
+        "neon-purple": "0 0 5px hsl(var(--cyber-purple)), 0 0 10px hsl(var(--cyber-purple))",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -44,6 +49,16 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        theme: {
+          blue: "hsl(var(--primary-blue))",
+          purple: "hsl(var(--soft-purple))",
+          gray: "hsl(var(--warm-gray))",
+          "light-bg": "hsl(var(--light-bg))",
+          white: "hsl(var(--white))",
+          "text-primary": "hsl(var(--text-primary))",
+          "text-secondary": "hsl(var(--text-secondary))",
+          "text-muted": "hsl(var(--text-muted))",
+        },
         chart: {
           "1": "hsl(var(--chart-1))",
           "2": "hsl(var(--chart-2))",

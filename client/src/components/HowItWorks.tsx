@@ -1,94 +1,194 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
+import { FileCheck2, Users2, ShieldCheck, BarChart3 } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+type StepColor = 'theme-blue' | 'theme-purple' | 'theme-gray';
+
+const STEP_STYLES: Record<
+  StepColor,
+  {
+    iconBg: string;
+    iconColor: string;
+    titleColor: string;
+    badgeBg: string;
+  }
+> = {
+  'theme-blue': {
+    iconBg: 'bg-theme-blue/10',
+    iconColor: 'text-theme-blue',
+    titleColor: 'text-theme-blue',
+    badgeBg: 'bg-theme-blue',
+  },
+  'theme-purple': {
+    iconBg: 'bg-theme-purple/10',
+    iconColor: 'text-theme-purple',
+    titleColor: 'text-theme-purple',
+    badgeBg: 'bg-theme-purple',
+  },
+  'theme-gray': {
+    iconBg: 'bg-theme-gray/20',
+    iconColor: 'text-theme-gray',
+    titleColor: 'text-theme-text-primary',
+    badgeBg: 'bg-theme-gray',
+  },
+};
 
 const StepCard: React.FC<{
   number: number;
-  icon: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
-  footer: string;
-  color: string;
-  hoverShadow: string;
-}> = ({ number, icon, title, description, footer, color, hoverShadow }) => {
+  footer?: string;
+  bullets?: string[];
+  color: StepColor;
+}> = ({ number, icon, title, description, footer, bullets, color }) => {
+  const styles = STEP_STYLES[color];
+  const Icon = icon;
+
   return (
-    <div className={`bg-cyber-dark/80 border border-${color}/30 rounded-xl p-6 relative group hover:${hoverShadow}/30 transition-all duration-500 transform hover:-translate-y-2`}>
-      <div className={`absolute -top-5 -left-5 w-12 h-12 rounded-full bg-gradient-to-br from-${color} to-cyber-blue flex items-center justify-center text-xl font-bold`}>{number}</div>
-      
-      <div className="text-center pt-4">
-        <div className={`w-20 h-20 mx-auto mb-6 bg-${color}/20 rounded-full flex items-center justify-center`}>
-          <i className={`text-3xl text-${color}`}>{icon}</i>
+    <div className="group relative">
+      <div className="relative bg-theme-white border border-theme-gray/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+        {/* Step number */}
+        <div className={`absolute -top-4 left-8 w-8 h-8 ${styles.badgeBg} text-theme-white rounded-full flex items-center justify-center text-sm font-semibold`}>
+          {number}
         </div>
         
-        <h3 className={`text-xl font-bold mb-4 text-${color}`}>{title}</h3>
-        <p className="text-gray-300">
-          {description}
-        </p>
-        
-        <div className={`mt-6 pt-6 border-t border-${color}/20`}>
-          <span className={`text-xs text-${color}/70`}>{footer}</span>
+        {/* Icon */}
+        <div className={`relative w-16 h-16 ${styles.iconBg} rounded-2xl flex items-center justify-center mb-6 mt-4`}>
+          <Icon className={`w-8 h-8 ${styles.iconColor}`} />
         </div>
+        
+        {/* Content */}
+        <h3 className={`text-xl font-semibold mb-3 ${styles.titleColor}`}>
+          {title}
+        </h3>
+        
+        <p className="text-theme-text-secondary leading-relaxed mb-4">{description}</p>
+
+        {bullets && (
+          <ul className="space-y-2 text-theme-text-secondary mb-4 list-disc list-inside">
+            {bullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        )}
+        
+        {footer && <p className="text-sm text-theme-text-muted">{footer}</p>}
       </div>
-      
-      {/* Decorative elements */}
-      <div className={`absolute top-0 right-0 w-6 h-6 border-t border-r border-${color}/40`}></div>
-      <div className={`absolute bottom-0 left-0 w-6 h-6 border-b border-l border-${color}/40`}></div>
     </div>
   );
 };
 
 const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-20 relative bg-cyber-gray">
-      {/* A futuristic tech pattern background with glowing elements */}
-      <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')", backgroundSize: "cover", backgroundPosition: "center"}}></div>
-      
-      <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-16">
-          <h2 className="inline-block text-3xl md:text-4xl font-bold relative">
-            Hoe <span className="text-cyber-blue">Werkt</span> Het?
-            <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue to-cyber-purple"></div>
+    <section id="how-it-works" className="py-20 relative overflow-hidden">
+      {/* Semi-transparent overlay for readability */}
+      <div className="absolute inset-0 bg-theme-light-bg/60 backdrop-blur-[1px]"></div>
+      <div className="container mx-auto px-6 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-semibold text-theme-text-primary mb-4">
+            Uw kwaliteit, onze zorg. <span className="text-theme-blue">Zo gaan we te werk.</span>
           </h2>
-          <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
-            In slechts drie eenvoudige stappen kun je beginnen met het opbouwen van jouw financiële toekomst samen met anderen.
+          <p className="text-theme-text-secondary mt-4 max-w-2xl mx-auto text-lg">
+            Van aanvraag tot optimalisatie: we koppelen uw vraag aan de juiste specialisten en leveren direct toepasbaar advies.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
           {/* Step 1 */}
-          <StepCard 
-            number={1}
-            icon="📱"
-            title="Maak een Account"
-            description="Registreer je voor VVC in minder dan 2 minuten. Vul alleen de belangrijkste gegevens in en je kunt meteen beginnen."
-            footer="Tijdsduur: < 2 minuten"
-            color="cyber-blue"
-            hoverShadow="shadow-neon-blue"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <StepCard 
+              number={1}
+              icon={FileCheck2}
+              title="De Aanvraag"
+              description="Heeft u behoefte aan inzicht in uw reviews, workflows of klantbeleving? Vraag onderaan deze pagina of via 'Vrienden worden' een offerte aan."
+              footer="Offerte-aanvraag voor reviews, workflows en klantbeleving"
+              color="theme-blue"
+            />
+          </motion.div>
           
           {/* Step 2 */}
-          <StepCard 
-            number={2}
-            icon="🎯"
-            title="Voer Missies Uit"
-            description="Kies uit verschillende missies die passen bij jouw interesses en vaardigheden. Elke voltooide missie levert direct een beloning op."
-            footer="Verdien: €10 - €500 per missie"
-            color="cyber-purple"
-            hoverShadow="shadow-neon-purple"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+          >
+            <StepCard 
+              number={2}
+              icon={Users2}
+              title="De Match"
+              description="Wij koppelen uw vraagstuk aan de juiste specialisten binnen onze club. Zoekt u IT-kwaliteitscontrole of een Mystery Shopper in de vastgoedsector? Wij hebben de expert in huis."
+              footer="Selectie van domeinexperts voor uw case"
+              color="theme-purple"
+            />
+          </motion.div>
           
           {/* Step 3 */}
-          <StepCard 
-            number={3}
-            icon="💸"
-            title="Groei & Verdien"
-            description="Nodig vrienden uit, bouw een netwerk, en verdien commissies op hun activiteiten. Hoe groter je netwerk, hoe meer je verdient."
-            footer="Passief inkomen via referrals"
-            color="cyber-green"
-            hoverShadow="shadow-neon-green"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          >
+            <StepCard 
+              number={3}
+              icon={ShieldCheck}
+              title="De Check"
+              description="Onze 'vrienden' gaan aan de slag. Dit gebeurt discreet en professioneel."
+              bullets={[
+                'Workflow tests & systeem checks',
+                'Productkennis toetsing',
+                'Review verificatie',
+              ]}
+              color="theme-gray"
+            />
+          </motion.div>
+
+          {/* Step 4 */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.3 }}
+          >
+            <StepCard 
+              number={4}
+              icon={BarChart3}
+              title="Rapportage & Optimalisatie"
+              description="U ontvangt een gedetailleerde rapportage van onze bevindingen. Niet alleen de pijnpunten, maar direct toepasbaar advies om uw business te verbeteren."
+              footer="Heldere rapportage + concrete verbeteracties"
+              color="theme-blue"
+            />
+          </motion.div>
         </div>
-        
-        {/* Connector lines between cards (visible on desktop) */}
-        <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-px bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-green"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+          className="mt-12 flex justify-center"
+        >
+          <a
+            href="/vrienden-worden"
+            className="inline-flex items-center px-6 py-3 rounded-xl bg-theme-blue text-white font-semibold shadow-lg hover:bg-theme-blue/90 transition-colors"
+          >
+            Vraag nu een offerte aan
+          </a>
+        </motion.div>
       </div>
     </section>
   );
