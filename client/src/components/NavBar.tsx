@@ -28,9 +28,9 @@ const NavBar: React.FC = () => {
             <Link href="/hoe-werkt-het" className="text-white/80 hover:text-white transition-colors duration-200">Hoe werkt het?</Link>
             <Link href="/vacatures" className="text-white/80 hover:text-white transition-colors duration-200">Vacatures</Link>
             <Link href="/vrienden-worden" className="text-white/80 hover:text-white transition-colors duration-200">Vrienden worden?</Link>
-            <Link href="/inloggen" className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/30 transition-all duration-200">
+            <a href="https://verdienendevriendenclub.vercel.app/" className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/30 transition-all duration-200">
               Inloggen
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -88,13 +88,13 @@ const NavBar: React.FC = () => {
             >
               Vrienden worden?
             </Link>
-            <Link
-              href="/inloggen"
+            <a
+              href="https://verdienendevriendenclub.vercel.app/"
               className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full hover:bg-white/30 transition-all duration-200 mt-4"
               onClick={() => setIsMenuOpen(false)}
             >
               Inloggen
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
