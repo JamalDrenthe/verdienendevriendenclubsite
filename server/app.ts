@@ -55,6 +55,7 @@ export async function setupApp() {
   // In production on Vercel, we don't use this serveStatic usually, 
   // but if we are running as a standalone node app, we do.
   if (app.get("env") === "development") {
+    const { setupVite } = await import("./vite");
     await setupVite(app, server);
   } else {
     // Check if we are in a serverless environment (Vercel)
