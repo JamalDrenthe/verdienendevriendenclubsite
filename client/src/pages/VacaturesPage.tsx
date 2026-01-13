@@ -411,7 +411,7 @@ const VacaturesPage: React.FC = () => {
       {/* Sollicitatie overlay */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-8 bg-black/70 backdrop-blur-sm">
-          <div className="relative w-full max-w-3xl bg-slate-900 border border-white/10 rounded-3xl shadow-2xl overflow-hidden">
+          <div className="relative w-full max-w-3xl vvc-glass-panel rounded-3xl shadow-2xl overflow-hidden">
             <button
               type="button"
               onClick={closeModal}
@@ -731,7 +731,7 @@ const VacaturesPage: React.FC = () => {
                   )}
                 </div>
 
-                <div className="px-8 py-6 border-t border-white/10 flex items-center justify-between gap-4 bg-slate-900/90">
+                <div className="px-8 py-6 border-t border-white/10 flex items-center justify-between gap-4 bg-black/20">
                   <button
                     type="button"
                     onClick={prevStep}

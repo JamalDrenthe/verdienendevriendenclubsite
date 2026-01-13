@@ -50,7 +50,7 @@ const VVCCalculator = () => {
   };
 
   return (
-    <div className="w-full bg-slate-950 text-white font-sans p-4 md:p-8 rounded-3xl">
+    <div className="w-full vvc-glass-panel text-white font-sans p-4 md:p-8 rounded-3xl">
       <div className="max-w-6xl mx-auto">
         
         {/* Header - Ondertitel verwijderd op verzoek */}
