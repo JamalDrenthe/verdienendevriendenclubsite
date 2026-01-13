@@ -573,7 +573,9 @@
 .vvc-title-card {
   padding: 2.5rem;
   border-radius: 2rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.02) 75%, rgba(255, 255, 255, 0.1) 100%);
+  background-size: 200% 200%;
+  animation: vvc-shimmer 7s ease-in-out infinite;
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -581,6 +583,12 @@
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@keyframes vvc-shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .vvc-title-card:hover {
   transform: translateY(-5px);
