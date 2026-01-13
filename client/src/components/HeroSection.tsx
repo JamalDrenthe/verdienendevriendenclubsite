@@ -27,8 +27,12 @@ const HeroSection: React.FC = () => {
           className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0"
         >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Welkom bij de
-            <span className="block text-4xl md:text-5xl lg:text-6xl font-light mt-2">Verdienende Vrienden Club (VVC)</span>
+            <span className="relative inline-flex items-center justify-center px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-500/80 via-fuchsia-500/70 to-pink-400/85 text-white shadow-lg shadow-pink-500/25 backdrop-blur-xl border border-white/20 ring-1 ring-white/30 ring-offset-2 ring-offset-pink-200/25">
+              <span className="absolute inset-0 rounded-2xl bg-white/10 blur-xl opacity-70 pointer-events-none" aria-hidden="true" />
+              <span className="block text-3xl md:text-4xl lg:text-5xl font-light mt-1 drop-shadow-[0_6px_18px_rgba(236,72,153,0.35)]">
+                Verdienende Vrienden Club (VVC)
+              </span>
+            </span>
           </h1>
           <p className="text-xl mb-8 text-white/80 max-w-lg">
             Specialisten in kwaliteitscontrole & optimalisatie. Wij helpen organisaties hun processen, producten en klantcontact naar het hoogste niveau te tillen.
