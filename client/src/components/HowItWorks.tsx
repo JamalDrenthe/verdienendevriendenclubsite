@@ -15,22 +15,22 @@ const STEP_STYLES: Record<
   }
 > = {
   'theme-blue': {
-    iconBg: 'bg-theme-blue/10',
+    iconBg: 'bg-theme-blue/20',
     iconColor: 'text-theme-blue',
     titleColor: 'text-theme-blue',
     badgeBg: 'bg-theme-blue',
   },
   'theme-purple': {
-    iconBg: 'bg-theme-purple/10',
+    iconBg: 'bg-theme-purple/20',
     iconColor: 'text-theme-purple',
     titleColor: 'text-theme-purple',
     badgeBg: 'bg-theme-purple',
   },
   'theme-gray': {
-    iconBg: 'bg-theme-gray/20',
-    iconColor: 'text-theme-gray',
-    titleColor: 'text-theme-text-primary',
-    badgeBg: 'bg-theme-gray',
+    iconBg: 'bg-white/10',
+    iconColor: 'text-white/80',
+    titleColor: 'text-white',
+    badgeBg: 'bg-white/20',
   },
 };
 
@@ -48,9 +48,9 @@ const StepCard: React.FC<{
 
   return (
     <div className="group relative">
-      <div className="relative bg-theme-white border border-theme-gray/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+      <div className="vvc-glass-panel relative rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
         {/* Step number */}
-        <div className={`absolute -top-4 left-8 w-8 h-8 ${styles.badgeBg} text-theme-white rounded-full flex items-center justify-center text-sm font-semibold`}>
+        <div className={`absolute -top-4 left-8 w-8 h-8 ${styles.badgeBg} text-white rounded-full flex items-center justify-center text-sm font-semibold`}>
           {number}
         </div>
         
@@ -64,17 +64,17 @@ const StepCard: React.FC<{
           {title}
         </h3>
         
-        <p className="text-theme-text-secondary leading-relaxed mb-4">{description}</p>
+        <p className="text-white/80 leading-relaxed mb-4">{description}</p>
 
         {bullets && (
-          <ul className="space-y-2 text-theme-text-secondary mb-4 list-disc list-inside">
+          <ul className="space-y-2 text-white/80 mb-4 list-disc list-inside">
             {bullets.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         )}
         
-        {footer && <p className="text-sm text-theme-text-muted">{footer}</p>}
+        {footer && <p className="text-sm text-white/60">{footer}</p>}
       </div>
     </div>
   );
@@ -93,10 +93,10 @@ const HowItWorks: React.FC = () => {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-theme-text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Uw kwaliteit, onze zorg. <span className="text-theme-blue">Zo gaan we te werk.</span>
           </h2>
-          <p className="text-theme-text-secondary mt-4 max-w-2xl mx-auto text-lg">
+          <p className="text-white/80 mt-4 max-w-2xl mx-auto text-lg">
             Van aanvraag tot optimalisatie: we koppelen uw vraag aan de juiste specialisten en leveren direct toepasbaar advies.
           </p>
         </motion.div>

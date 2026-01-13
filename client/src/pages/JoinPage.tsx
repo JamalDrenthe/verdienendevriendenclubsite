@@ -25,7 +25,7 @@ const JoinPage: React.FC = () => {
         <section className="pb-16">
           <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-8">
             {/* Optie A: Voor bedrijven */}
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm shadow-lg relative overflow-hidden">
+            <div className="vvc-glass-panel rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute -right-10 -top-10 w-40 h-40 bg-theme-blue/10 blur-3xl rounded-full" />
               <div className="relative space-y-4">
                 <p className="text-theme-blue uppercase tracking-[0.25em] text-xs">Optie A</p>
@@ -85,7 +85,7 @@ const JoinPage: React.FC = () => {
             </div>
 
             {/* Optie B: Voor talent */}
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm shadow-lg relative overflow-hidden">
+            <div className="vvc-glass-panel rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute -left-10 -top-10 w-40 h-40 bg-theme-purple/10 blur-3xl rounded-full" />
               <div className="relative space-y-4">
                 <p className="text-theme-purple uppercase tracking-[0.25em] text-xs">Optie B</p>

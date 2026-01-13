@@ -62,7 +62,7 @@ const VVCCalculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-white">
           
           {/* Linkerkolom: Inputs */}
-          <div className="bg-slate-900 p-6 rounded-3xl shadow-2xl border border-slate-800 flex flex-col gap-8">
+          <div className="vvc-glass-panel p-6 rounded-3xl flex flex-col gap-8">
             <h2 className="text-xl font-bold flex items-center text-yellow-500">
               <Calculator className="mr-2" /> Parameters
             </h2>
@@ -82,7 +82,7 @@ const VVCCalculator = () => {
                 step="1"
                 value={hoursPerWeek}
                 onChange={(e) => setHoursPerWeek(parseInt(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-yellow-500"
+                className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-yellow-500"
                 aria-label="Beluren per week"
                 title="Beluren per week"
               />
@@ -107,7 +107,7 @@ const VVCCalculator = () => {
                 step="1"
                 value={placementsPerMonth}
                 onChange={(e) => setPlacementsPerMonth(parseInt(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-yellow-500"
+                className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-yellow-500"
                 aria-label="Plaatsingen per maand"
                 title="Plaatsingen per maand"
               />
@@ -117,7 +117,7 @@ const VVCCalculator = () => {
               </div>
             </div>
 
-            <div className="mt-auto bg-slate-800/40 p-5 rounded-2xl border border-slate-700/50">
+            <div className="mt-auto vvc-glass-panel p-5 rounded-2xl">
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-center">Maandelijkse Cashflow (Maand 1)</h3>
               <div className="space-y-3">
                 <div className="flex justify-between text-sm">
@@ -153,7 +153,7 @@ const VVCCalculator = () => {
                 </div>
               </div>
 
-              <div className="bg-slate-900 p-6 rounded-3xl shadow-lg border border-slate-800 flex flex-col justify-between">
+              <div className="vvc-glass-panel p-6 rounded-3xl flex flex-col justify-between">
                 <div>
                   <div className="text-slate-500 text-xs font-black uppercase tracking-widest mb-1">Jaartotaal (Jaar 1)</div>
                   <div className="text-4xl font-black text-white">{formatEuro(totalYearEarnings)}</div>
@@ -166,7 +166,7 @@ const VVCCalculator = () => {
             </div>
 
             {/* Grafiek */}
-            <div className="bg-slate-900 p-6 rounded-3xl shadow-2xl border border-slate-800 flex-grow flex flex-col min-h-[400px]">
+            <div className="vvc-glass-panel p-6 rounded-3xl flex-grow flex flex-col min-h-[400px]">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
                 <h3 className="text-lg font-black uppercase tracking-tight text-white">Inkomensgroei & Sneeuwbaleffect</h3>
                 <div className="flex flex-wrap gap-4 text-[10px] font-black uppercase tracking-widest">
@@ -224,7 +224,7 @@ const VVCCalculator = () => {
         </div>
 
         {/* Footer Info */}
-        <div className="mt-8 bg-slate-900/40 p-6 rounded-3xl border border-slate-800 flex items-start gap-4">
+        <div className="mt-8 vvc-glass-panel p-6 rounded-3xl flex items-start gap-4">
           <div className="bg-yellow-500/10 p-2 rounded-xl">
             <Info className="text-yellow-500" size={20} />
           </div>

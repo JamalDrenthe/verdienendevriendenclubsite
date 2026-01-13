@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
           </div>
 
           <div className="relative z-10 w-full max-w-md">
-            <div className="rounded-[28px] border border-cyan-500/25 bg-[#051022]/70 backdrop-blur-md shadow-[0_0_30px_rgba(0,200,255,0.2)] overflow-hidden">
+            <div className="vvc-glass-panel rounded-[28px] overflow-hidden">
               <div className="p-6 border-b border-cyan-500/15 bg-gradient-to-b from-cyan-500/10 to-transparent flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full border border-cyan-500/40 flex items-center justify-center text-cyan-300">
                   <ShieldCheck size={18} />

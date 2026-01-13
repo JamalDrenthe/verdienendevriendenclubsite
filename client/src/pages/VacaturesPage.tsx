@@ -210,9 +210,9 @@ const VacaturesPage: React.FC = () => {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm"
+                  className="vvc-glass-panel rounded-2xl p-4"
                 >
-                  <p className="text-sm text-theme-text-muted mb-1">{item.label}</p>
+                  <p className="text-sm text-white/60 mb-1">{item.label}</p>
                   <p className="text-white font-semibold">{item.value}</p>
                 </div>
               ))}
@@ -223,64 +223,64 @@ const VacaturesPage: React.FC = () => {
         {/* Senior Consultant Vacancy */}
         <section id="senior" className="py-10">
           <div className="container mx-auto px-6">
-            <div className="bg-theme-white/80 backdrop-blur-sm border border-theme-gray/20 rounded-3xl p-8 md:p-12 mb-12 shadow-lg">
+            <div className="vvc-glass-panel rounded-3xl p-8 md:p-12 mb-12">
               <div className="flex flex-col xl:flex-row gap-10 items-start">
                 <div className="flex-1">
                   <div className="inline-flex items-center gap-2 bg-theme-blue/10 text-theme-blue px-4 py-2 rounded-full text-sm font-semibold mb-6">
                     <Trophy size={16} />
                     <span>Senior Consultant</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-2">Senior Consultant (Headhunting & Begeleiding)</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Senior Consultant (Headhunting & Begeleiding)</h2>
                   <p className="text-theme-blue font-medium text-lg mb-6">Verdien €50k - €95k OTE | Onbeperkte Leads</p>
                   
-                  <div className="prose max-w-none text-theme-text-secondary space-y-6">
+                  <div className="prose max-w-none text-white/80 space-y-6">
                     <p className="text-lg leading-relaxed">
                       Ben jij klaar met de traditionele kantoorcultuur? Bij de Verdienende Vrienden Club (VVC) werken we niet voor een baas, maar mét elkaar. Wij zijn op zoek naar Senior Consultants die hun eigen succesroute willen bepalen.
                     </p>
                     
                     <div className="grid md:grid-cols-2 gap-5">
-                      <div className="bg-white/60 border border-white/40 rounded-2xl p-5">
-                        <h3 className="text-theme-text-primary text-lg font-semibold mb-3">Jouw rol</h3>
+                      <div className="vvc-glass-panel rounded-2xl p-5">
+                        <h3 className="text-white text-lg font-semibold mb-3">Jouw rol</h3>
                         <p className="m-0">
                           Als Senior Consultant ben jij de spin in het web. Je vindt toptalent en begeleidt hen door het volledige onboarding-proces bij onze partnerbedrijven. Je krijgt een vaste route en wij begeleiden jou naar succes.
                         </p>
                       </div>
-                      <div className="bg-white/60 border border-white/40 rounded-2xl p-5">
-                        <h3 className="text-theme-text-primary text-lg font-semibold mb-3">Wie zoeken wij?</h3>
+                      <div className="vvc-glass-panel rounded-2xl p-5">
+                        <h3 className="text-white text-lg font-semibold mb-3">Wie zoeken wij?</h3>
                         <p className="m-0">
                           Een netwerker pur sang die schakelt met diverse bedrijven en directe impact maakt. Gedreven, zelfstandig en klaar om te scoren.
                         </p>
                       </div>
                     </div>
 
-                    <h3 className="text-theme-text-primary text-xl font-semibold mt-6">Wat wij bieden</h3>
+                    <h3 className="text-white text-xl font-semibold mt-6">Wat wij bieden</h3>
                     <ul className="space-y-3 mb-4 list-none pl-0">
                       <li className="flex gap-3">
                         <Check className="text-theme-blue flex-shrink-0 mt-1" />
-                        <span className="text-theme-text-secondary"><strong className="text-theme-text-primary">Verdienmodel:</strong> €30,- per uur (tijdens bellen) + €300,- bonus per plaatsing.</span>
+                        <span className="text-white/80"><strong className="text-white">Verdienmodel:</strong> €30,- per uur (tijdens bellen) + €300,- bonus per plaatsing.</span>
                       </li>
                       <li className="flex gap-3">
                         <Check className="text-theme-blue flex-shrink-0 mt-1" />
-                        <span className="text-theme-text-secondary"><strong className="text-theme-text-primary">Passief Inkomen:</strong> €25,- per maand per geplaatste kandidaat, zolang je onderdeel bent van de club.</span>
+                        <span className="text-white/80"><strong className="text-white">Passief Inkomen:</strong> €25,- per maand per geplaatste kandidaat, zolang je onderdeel bent van de club.</span>
                       </li>
                       <li className="flex gap-3">
                         <Check className="text-theme-blue flex-shrink-0 mt-1" />
-                        <span className="text-theme-text-secondary"><strong className="text-theme-text-primary">Warm Netwerk:</strong> Oneindige warme leads, geen koud bellen.</span>
+                        <span className="text-white/80"><strong className="text-white">Warm Netwerk:</strong> Oneindige warme leads, geen koud bellen.</span>
                       </li>
                       <li className="flex gap-3">
                         <Check className="text-theme-blue flex-shrink-0 mt-1" />
-                        <span className="text-theme-text-secondary"><strong className="text-theme-text-primary">Vrijheid & Zekerheid:</strong> Start flexibel, na succes een jaarcontract van 40 uur.</span>
+                        <span className="text-white/80"><strong className="text-white">Vrijheid & Zekerheid:</strong> Start flexibel, na succes een jaarcontract van 40 uur.</span>
                       </li>
                     </ul>
                   </div>
                 </div>
                 
                 <div className="w-full xl:w-80 flex-shrink-0">
-                  <div className="bg-theme-light-bg rounded-2xl p-6 sticky top-24 space-y-4 border border-white/10 shadow-lg">
+                  <div className="vvc-glass-panel rounded-2xl p-6 sticky top-24 space-y-4">
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-theme-blue mb-2">Interesse?</p>
                       <h4 className="text-white font-semibold mb-1">Solliciteer direct</h4>
-                      <p className="text-sm text-theme-text-muted">Stuur je CV en motivatie</p>
+                      <p className="text-sm text-white/60">Stuur je CV en motivatie</p>
                     </div>
                     <button
                       type="button"
@@ -289,7 +289,7 @@ const VacaturesPage: React.FC = () => {
                     >
                       Direct Solliciteren
                     </button>
-                    <div className="border-t border-white/10 pt-3 space-y-2 text-sm text-theme-text-secondary">
+                    <div className="border-t border-white/10 pt-3 space-y-2 text-sm text-white/80">
                       <div className="flex items-center gap-2">
                         <Check className="text-theme-blue w-4 h-4" />
                         <span>Onbeperkte warme leads</span>
@@ -305,61 +305,61 @@ const VacaturesPage: React.FC = () => {
             </div>
 
             {/* Pilot Vacancy */}
-            <div className="bg-white/80 border border-theme-gray/20 rounded-3xl p-8 md:p-12 shadow-lg">
+            <div className="vvc-glass-panel rounded-3xl p-8 md:p-12">
               <div className="flex flex-col xl:flex-row gap-10 items-start">
                 <div className="flex-1">
                   <div className="inline-flex items-center gap-2 bg-theme-purple/10 text-theme-purple px-4 py-2 rounded-full text-sm font-semibold mb-6">
                     <Zap size={16} />
                     <span>Pilot Project</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-theme-text-primary mb-2">Junior Recruiter & Senior Closer (Duo-baan)</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Junior Recruiter & Senior Closer (Duo-baan)</h2>
                   <p className="text-theme-purple font-medium text-lg mb-6">Teamwork makes the dream work | Verdien samen</p>
                   
-                  <div className="prose max-w-none text-theme-text-secondary">
+                  <div className="prose max-w-none text-white/80">
                     <p className="text-lg leading-relaxed mb-6">
                       Bij VVC geloven we in innovatie. Onderzoek toont aan dat twee perfect op elkaar ingespeelde verkopers effectiever zijn dan één. Daarom starten wij een uniek pilot-project: Double Team.
                     </p>
                     
-                    <h3 className="text-theme-text-primary text-xl font-semibold mt-8 mb-4">Het Concept</h3>
-                    <p className="mb-4 text-theme-text-secondary">Jullie solliciteren als duo of worden door ons gematcht.</p>
+                    <h3 className="text-white text-xl font-semibold mt-8 mb-4">Het Concept</h3>
+                    <p className="mb-4 text-white/80">Jullie solliciteren als duo of worden door ons gematcht.</p>
                     
                     <div className="grid md:grid-cols-2 gap-6 my-6">
-                      <div className="bg-white/70 p-6 rounded-xl border border-theme-gray/10">
+                      <div className="vvc-glass-panel rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <Users className="text-theme-purple" />
-                          <h4 className="text-theme-text-primary font-semibold m-0">De Netwerker</h4>
+                          <h4 className="text-white font-semibold m-0">De Netwerker</h4>
                         </div>
-                        <p className="text-sm m-0 text-theme-text-secondary">Jij hebt de gunfactor. Jij legt het eerste contact, bouwt de relatie en opent de deur.</p>
+                        <p className="text-sm m-0 text-white/80">Jij hebt de gunfactor. Jij legt het eerste contact, bouwt de relatie en opent de deur.</p>
                       </div>
-                      <div className="bg-white/70 p-6 rounded-xl border border-theme-gray/10">
+                      <div className="vvc-glass-panel rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <Briefcase className="text-theme-purple" />
-                          <h4 className="text-theme-text-primary font-semibold m-0">De Killer Closer</h4>
+                          <h4 className="text-white font-semibold m-0">De Killer Closer</h4>
                         </div>
-                        <p className="text-sm m-0 text-theme-text-secondary">Jij kopt hem in. Zodra de relatie er is, zorg jij voor de deal en de handtekening.</p>
+                        <p className="text-sm m-0 text-white/80">Jij kopt hem in. Zodra de relatie er is, zorg jij voor de deal en de handtekening.</p>
                       </div>
                     </div>
 
-                    <h3 className="text-theme-text-primary text-xl font-semibold mt-8 mb-4">Wat levert het op?</h3>
+                    <h3 className="text-white text-xl font-semibold mt-8 mb-4">Wat levert het op?</h3>
                     <ul className="space-y-4 mb-6 list-none pl-0">
                       <li className="flex gap-3">
                         <Check className="text-theme-purple flex-shrink-0 mt-1" />
-                        <span className="text-theme-text-secondary"><strong className="text-theme-text-primary">Verdiensten:</strong> Een gemiddeld inkomen van €4.000,- per persoon per maand.</span>
+                        <span className="text-white/80"><strong className="text-white">Verdiensten:</strong> Een gemiddeld inkomen van €4.000,- per persoon per maand.</span>
                       </li>
                       <li className="flex gap-3">
                         <Check className="text-theme-purple flex-shrink-0 mt-1" />
-                        <span className="text-theme-text-secondary"><strong className="text-theme-text-primary">Missie:</strong> 1 Team, 1 Taak. Samen veroveren jullie de markt als visitekaartje van VVC.</span>
+                        <span className="text-white/80"><strong className="text-white">Missie:</strong> 1 Team, 1 Taak. Samen veroveren jullie de markt als visitekaartje van VVC.</span>
                       </li>
                     </ul>
                   </div>
                 </div>
                 
                 <div className="w-full xl:w-80 flex-shrink-0">
-                  <div className="bg-theme-light-bg rounded-2xl p-6 sticky top-24 space-y-4 border border-white/10 shadow-lg">
+                  <div className="vvc-glass-panel rounded-2xl p-6 sticky top-24 space-y-4">
                     <div>
                       <p className="text-xs uppercase tracking-[0.2em] text-theme-purple mb-2">Pilot</p>
-                      <h4 className="text-theme-text-primary font-semibold mb-1">Double Team</h4>
-                      <p className="text-sm text-theme-text-secondary">Aanmelden als duo of laat je matchen.</p>
+                      <h4 className="text-white font-semibold mb-1">Double Team</h4>
+                      <p className="text-sm text-white/60">Aanmelden als duo of laat je matchen.</p>
                     </div>
                     <button
                       type="button"
@@ -368,7 +368,7 @@ const VacaturesPage: React.FC = () => {
                     >
                       Aanmelden als Duo
                     </button>
-                    <div className="border-t border-white/10 pt-3 space-y-2 text-sm text-theme-text-secondary">
+                    <div className="border-t border-white/10 pt-3 space-y-2 text-sm text-white/80">
                       <div className="flex items-center gap-2">
                         <Check className="text-theme-purple w-4 h-4" />
                         <span>Gemiddeld €4.000 p.p. p/m</span>

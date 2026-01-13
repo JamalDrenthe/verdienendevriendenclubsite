@@ -28,16 +28,16 @@ const AboutSection: React.FC = () => {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="order-2 md:order-1"
           >
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
+            <div className="vvc-glass-panel rounded-3xl p-8">
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold mb-4">
+                  <h3 className="text-2xl font-semibold mb-4 text-white">
                     Wat wij doen
                   </h3>
-                  <p className="text-white/70 leading-relaxed text-lg">
+                  <p className="text-white/80 leading-relaxed text-lg">
                     Wij bieden diepgaande kwaliteitscontroles, variërend van digitale audits tot fysieke inspecties. Onze focus ligt op kwaliteitscontrole, systeem- & workflowtesten en mystery shopping.
                   </p>
-                  <ul className="mt-6 space-y-3 text-white/70 leading-relaxed text-lg">
+                  <ul className="mt-6 space-y-3 text-white/80 leading-relaxed text-lg">
                     <li>
                       <span className="font-semibold text-white">Kwaliteitscontrole:</span> grondige checks van reviews en productspecificaties.
                     </li>
@@ -50,26 +50,26 @@ const AboutSection: React.FC = () => {
                   </ul>
                 </div>
                 
-                <div className="bg-white/10 rounded-2xl p-6">
-                  <h4 className="text-xl font-semibold mb-3">Onze Methode</h4>
-                  <p className="text-white/70 leading-relaxed">
+                <div className="vvc-glass-panel rounded-2xl p-6">
+                  <h4 className="text-xl font-semibold mb-3 text-white">Onze Methode</h4>
+                  <p className="text-white/80 leading-relaxed">
                     Wij geloven in een 360-graden aanpak. Daarom voeren wij onze controles uit op drie niveaus: digitaal (online audits en systeemchecks), fysiek (locatiebezoeken en productinspecties) en telefonisch (klantenservice- en sales-audits).
                   </p>
                 </div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="flex -space-x-2">
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium">
+                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium border border-white/10">
                       FI
                     </div>
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium">
+                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium border border-white/10">
                       VA
                     </div>
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium">
+                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-medium border border-white/10">
                       IT
                     </div>
                   </div>
-                  <p className="text-white/70 text-sm">
+                  <p className="text-white/80 text-sm">
                     <span className="font-semibold text-white">Actief in 4 sectoren</span> waar kwaliteit het verschil maakt
                   </p>
                 </div>
@@ -85,7 +85,7 @@ const AboutSection: React.FC = () => {
             className="order-1 md:order-2"
           >
             <div className="relative">
-              <div className="aspect-square rounded-3xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/20">
+              <div className="aspect-square rounded-3xl overflow-hidden vvc-glass-panel p-0 border-none">
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800" 
                   alt="Team dat samenwerkt aan kwaliteitscontrole" 
@@ -93,14 +93,14 @@ const AboutSection: React.FC = () => {
                 />
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
+              <div className="absolute -bottom-4 -left-4 vvc-glass-panel rounded-2xl p-4">
                 <p className="text-2xl font-bold">360°</p>
-                <p className="text-sm text-white/70">aanpak</p>
+                <p className="text-sm text-white/80">aanpak</p>
               </div>
               
-              <div className="absolute -top-4 -right-4 bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30">
+              <div className="absolute -top-4 -right-4 vvc-glass-panel rounded-2xl p-4">
                 <p className="text-2xl font-bold">3</p>
-                <p className="text-sm text-white/70">niveaus</p>
+                <p className="text-sm text-white/80">niveaus</p>
               </div>
             </div>
           </motion.div>

@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
         {/* Hero */}
         <header className="relative py-16 md:py-24">
           <div className="container mx-auto px-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-r from-theme-blue/40 via-theme-purple/40 to-theme-blue/30 backdrop-blur-xl shadow-2xl">
+            <div className="relative overflow-hidden vvc-glass-panel">
               <div className="absolute inset-0 bg-white/5 mix-blend-overlay" />
               <div className="absolute -left-24 -top-24 w-64 h-64 bg-theme-blue/30 blur-3xl rounded-full" />
               <div className="absolute -right-16 bottom-0 w-56 h-56 bg-theme-purple/25 blur-3xl rounded-full" />
@@ -56,14 +56,14 @@ const AboutPage: React.FC = () => {
         <section className="py-16">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-8 shadow-lg">
+              <div className="relative overflow-hidden vvc-glass-panel p-8">
                 <Rocket className="text-theme-blue mb-4" size={36} />
                 <h2 className="text-3xl font-semibold text-white mb-4">Missie</h2>
                 <p className="text-white/75 text-lg leading-relaxed">
                   Kwaliteit transformeren tot de hoogste valuta. Wij elimineren ruis en valideren workflows om organisaties naar hun absolute top te brengen.
                 </p>
               </div>
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md p-8 shadow-lg">
+              <div className="relative overflow-hidden vvc-glass-panel p-8">
                 <Eye className="text-theme-purple mb-4" size={36} />
                 <h2 className="text-3xl font-semibold text-white mb-4">Visie</h2>
                 <p className="text-white/75 text-lg leading-relaxed">
@@ -89,7 +89,7 @@ const AboutPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {culture.map((item) => (
-                <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm shadow-lg hover:border-white/20 transition-colors">
+                <div key={item.title} className="vvc-glass-panel p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <item.icon className="text-theme-blue" size={24} />
                     <h3 className="text-xl font-semibold text-white">{item.title}</h3>
@@ -104,7 +104,7 @@ const AboutPage: React.FC = () => {
         {/* Belofte */}
         <section className="py-16">
           <div className="container mx-auto px-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-r from-theme-blue/20 via-theme-purple/20 to-theme-blue/15 backdrop-blur-xl shadow-2xl p-10 md:p-14 text-center">
+            <div className="relative overflow-hidden vvc-glass-panel p-10 md:p-14 text-center">
               <div className="absolute inset-0 bg-white/5 mix-blend-overlay" />
               <div className="relative">
                 <div className="mx-auto mb-8 inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 border border-white/15">
@@ -127,7 +127,7 @@ const AboutPage: React.FC = () => {
         <section className="py-16 border-t border-white/10">
           <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm shadow-md">
+              <div key={stat.label} className="text-center vvc-glass-panel p-6">
                 <div className="mb-4 flex justify-center">
                   <stat.icon className="text-theme-blue/80" size={24} />
                 </div>

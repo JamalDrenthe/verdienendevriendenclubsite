@@ -15,22 +15,22 @@ const BENEFIT_STYLES: Record<
   }
 > = {
   'theme-blue': {
-    bg: 'bg-theme-blue/5',
-    iconBg: 'bg-theme-blue/10',
+    bg: 'bg-white/5',
+    iconBg: 'bg-theme-blue/20',
     iconColor: 'text-theme-blue',
     titleColor: 'text-theme-blue',
   },
   'theme-purple': {
-    bg: 'bg-theme-purple/5',
-    iconBg: 'bg-theme-purple/10',
+    bg: 'bg-white/5',
+    iconBg: 'bg-theme-purple/20',
     iconColor: 'text-theme-purple',
     titleColor: 'text-theme-purple',
   },
   'theme-gray': {
-    bg: 'bg-theme-gray/10',
-    iconBg: 'bg-theme-gray/20',
-    iconColor: 'text-theme-gray',
-    titleColor: 'text-theme-text-primary',
+    bg: 'bg-white/5',
+    iconBg: 'bg-white/10',
+    iconColor: 'text-white/80',
+    titleColor: 'text-white',
   },
 };
 
@@ -47,7 +47,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, col
 
   return (
     <div className="group relative">
-      <div className="relative bg-theme-white border border-theme-gray/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+      <div className="vvc-glass-panel relative rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
         {/* Icon container */}
         <div className={`relative w-16 h-16 ${styles.iconBg} rounded-2xl flex items-center justify-center mb-6`}>
           <Icon aria-hidden="true" className={`w-8 h-8 ${styles.iconColor}`} />
@@ -57,7 +57,7 @@ const BenefitCard: React.FC<BenefitCardProps> = ({ icon, title, description, col
           {title}
         </h3>
         
-        <p className="text-theme-text-secondary leading-relaxed">
+        <p className="text-white/80 leading-relaxed">
           {description}
         </p>
       </div>
@@ -78,10 +78,10 @@ const BenefitsSection: React.FC = () => {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold text-theme-text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
             Waarom <span className="text-theme-blue">VVC</span>?
           </h2>
-          <p className="text-theme-text-secondary max-w-2xl mx-auto">
+          <p className="text-white/80 max-w-2xl mx-auto">
             Ontdek hoe VVC jouw organisatie helpt om kwaliteit te borgen en processen te optimaliseren.
           </p>
         </motion.div>
@@ -156,17 +156,17 @@ const BenefitsSection: React.FC = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="mt-20"
         >
-          <div className="bg-theme-white rounded-2xl p-8 shadow-sm border border-theme-gray/20">
+          <div className="vvc-glass-panel rounded-2xl p-8 shadow-sm">
             <div className="flex items-start space-x-4">
-              <div className="w-12 h-12 bg-theme-blue rounded-full flex items-center justify-center text-theme-white font-semibold flex-shrink-0">
+              <div className="w-12 h-12 bg-theme-blue rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
                 JD
               </div>
               <div>
-                <p className="text-theme-text-secondary mb-4 italic">
+                <p className="text-white/80 mb-4 italic">
                   "Dankzij VVC kregen we eindelijk helder inzicht in waar het misging. De verbeterpunten waren concreet en direct toepasbaar - onze klantbeleving is zichtbaar gestegen."
                 </p>
-                <p className="font-semibold text-theme-text-primary">- Jan de Vries</p>
-                <p className="text-sm text-theme-text-muted">Samenwerking sinds 2023</p>
+                <p className="font-semibold text-white">- Jan de Vries</p>
+                <p className="text-sm text-white/60">Samenwerking sinds 2023</p>
               </div>
             </div>
           </div>
