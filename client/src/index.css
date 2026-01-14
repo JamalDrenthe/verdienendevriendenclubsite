@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,7 +47,7 @@
 
   body {
     @apply font-sans antialiased text-white;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Open Sans', sans-serif !important;
     line-height: 1.6;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 100%);
     background-attachment: fixed;
@@ -59,10 +57,12 @@
 
   h1, h2 {
     @apply font-semibold tracking-tight;
+    font-family: 'Montserrat', sans-serif !important;
   }
   
   h3, h4 {
     @apply font-medium tracking-tight;
+    font-family: 'Montserrat', sans-serif !important;
   }
 }
 
@@ -517,7 +517,6 @@
 
 /* --- VVC Hero theme (scoped) --- */
 .vvc-theme {
-  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #fff;
   position: relative;
 }

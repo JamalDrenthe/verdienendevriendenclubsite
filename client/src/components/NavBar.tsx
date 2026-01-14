@@ -16,7 +16,7 @@ const NavBar: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 text-2xl font-bold text-white"
+            className="flex items-center gap-2 text-2xl font-bold text-white font-heading"
           >
             <Link href="/" className="flex items-center gap-2 hover:text-white/80 transition-colors duration-200">
               <span>VVC</span>

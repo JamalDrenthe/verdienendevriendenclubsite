@@ -180,7 +180,7 @@ const VacaturesPage: React.FC = () => {
           <div className="container mx-auto px-6 relative">
             <div className="max-w-4xl">
               <p className="text-theme-blue uppercase tracking-[0.3em] text-xs mb-4">Carrière</p>
-              <h1 className="text-4xl md:text-5xl font-semibold text-white mb-4 leading-tight">
+              <h1 className="font-heading text-4xl md:text-5xl font-semibold text-white mb-4 leading-tight">
                 Word onderdeel van de Club
               </h1>
               <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl">
@@ -230,7 +230,7 @@ const VacaturesPage: React.FC = () => {
                     <Trophy size={16} />
                     <span>Senior Consultant</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Senior Consultant (Headhunting & Begeleiding)</h2>
+                  <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-2">Senior Consultant (Headhunting & Begeleiding)</h2>
                   <p className="text-theme-blue font-medium text-lg mb-6">Verdien €50k - €95k OTE | Onbeperkte Leads</p>
                   
                   <div className="prose max-w-none text-white/80 space-y-6">
@@ -312,7 +312,7 @@ const VacaturesPage: React.FC = () => {
                     <Zap size={16} />
                     <span>Pilot Project</span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Junior Recruiter & Senior Closer (Duo-baan)</h2>
+                  <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-2">Junior Recruiter & Senior Closer (Duo-baan)</h2>
                   <p className="text-theme-purple font-medium text-lg mb-6">Teamwork makes the dream work | Verdien samen</p>
                   
                   <div className="prose max-w-none text-white/80">

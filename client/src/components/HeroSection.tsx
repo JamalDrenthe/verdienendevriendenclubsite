@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import CyberCard from '@/components/CyberCard';
 import { motion } from 'framer-motion';
-import brainsVideo from '/video/brains.mp4';
 
 const HeroSection: React.FC = () => {
-  const videoSrc = brainsVideo || '/video/brains.mp4';
+  // Added version param to force cache refresh
+  const videoSrc = '/video/brains.mp4?v=2';
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const HeroSection: React.FC = () => {
           className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0 space-y-6"
         >
           <div className="vvc-title-card inline-block mt-6 sm:mt-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-glow flex flex-col gap-1 items-center lg:items-start">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-glow flex flex-col gap-1 items-center lg:items-start">
               <span>Verdienende</span>
               <span>Vrienden</span>
               <span className="accent-text mt-1">Club</span>
@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => {
               <video
                 ref={videoRef}
                 key={videoSrc}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover scale-[1.1]"
                 autoPlay
                 muted
                 loop

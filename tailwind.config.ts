@@ -4,6 +4,10 @@ export default {
   darkMode: ["class"],
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      sans: ["Open Sans", "sans-serif"],
+      heading: ["Montserrat", "sans-serif"],
+    },
     extend: {
       boxShadow: {
         "neon-green": "0 0 5px hsl(var(--cyber-green)), 0 0 10px hsl(var(--cyber-green))",
