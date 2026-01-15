@@ -42,7 +42,7 @@ const HeroSection: React.FC = () => {
 
           <div className="vvc-divider" />
 
-          <div className="vvc-text-card text-lg md:text-xl text-white/85 max-w-xl mx-auto lg:mx-0 space-y-3 mt-80 sm:mt-96">
+          <div className="vvc-text-card text-lg md:text-xl text-white/85 max-w-xl mx-auto lg:mx-0 space-y-3 mt-8 sm:mt-10">
             <p>Wij optimaliseren bedrijfsprocessen en klantcontact met unieke strategie, technologie en uitvoering.</p>
             <p>Processen lopen efficiënter, fouten nemen af en klantinteracties worden consistenter en beter gestuurd.</p>
             <p>Organisaties werken sneller, besparen kosten en bieden een klantbeleving die zichtbaar professioneler en betrouwbaarder is.</p>
